@@ -9,7 +9,7 @@ df = pd.read_csv('./data/opendata_project.csv')
 df = df[['project_id', 'name_th', 'price_min', 'developer_name_th', 'latitude', 'longitude', 'url_project', 'propertytype_name_th', 'date_created']]
 df['price_min'] = pd.to_numeric(df['price_min'], errors='coerce')
 df['date_created'] = pd.to_datetime(df['date_created'], format='%Y-%m-%d', errors='coerce')
-df = df[(df['price_min'] < 7000000) & (df['price_min'] > 3000000)]
+df = df[(df['price_min'] < 7000000) & (df['price_min'] > 4000000)]
 df = df[(df['propertytype_name_th'] == 'บ้าน') | (df['propertytype_name_th'] == 'บ้านแฝด')]
 df.dropna(subset=['developer_name_th'], inplace=True)
 
