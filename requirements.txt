@@ -154,3 +154,6 @@ widgetsnbextension @ file:///home/conda/feedstock_root/build_artifacts/widgetsnb
 xyzservices==2025.1.0
 zipp @ file:///home/conda/feedstock_root/build_artifacts/zipp_1718013267051/work
 zstandard==0.22.0
+
+pandas~=2.2.3
+flask~=3.1.0
