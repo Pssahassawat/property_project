@@ -41,5 +41,5 @@ for _, row in filtered_df.iterrows():
     folium.CircleMarker(location=(row['latitude'], row['longitude']), radius=2, color='blue', fill=True, fill_opacity=0.6, popup=popup_content).add_to(map_center)
 
 # Save the Map
-map_center.save('map.html')
-print("Map saved as 'map.html'.")
+map_center.save('index.html')
+print("Map saved as 'index.html'.")
