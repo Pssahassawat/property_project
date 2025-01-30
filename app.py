@@ -13,13 +13,17 @@ df = df[(df['price_min'] < 7000000) & (df['price_min'] > 3000000)]
 df = df[(df['propertytype_name_th'] == 'บ้าน') | (df['propertytype_name_th'] == 'บ้านแฝด')]
 df.dropna(subset=['developer_name_th'], inplace=True)
 
+# Define the default latitude and longitude
+default_lat = 13.755044595496038
+default_lon = 100.47044284884544
+
 # Define the Streamlit app
 def main():
     st.title('OpenData Project Map')
 
     # Get user input for latitude and longitude
-    user_lat = st.number_input('Enter your latitude:', key='latitude')
-    user_lon = st.number_input('Enter your longitude:', key='longitude')
+    user_lat = st.number_input('Enter your latitude:', key='latitude', value=default_lat)
+    user_lon = st.number_input('Enter your longitude:', key='longitude', value=default_lon)
 
     if st.button('Submit', key='submitButton'):
         if user_lat and user_lon:
