@@ -27,9 +27,10 @@ map_center = folium.Map(location=center_point, zoom_start=13)
 folium.Marker(center_point, popup='Center Point', icon=folium.Icon(color='red')).add_to(map_center)
 
 for _, row in filtered_df.iterrows():
-    popup_content = f"Name: {row['name_th']}<br>Developer: {row['developer_name_th']}<br>Price: {row['price_min']}<br>Link: {row['url_project']}"
-    folium.CircleMarker(location=(row['latitude'], row['longitude']), radius=2, color='blue', fill=True, fill_opacity=0.6, popup=popup_content).add_to(map_center)
+    popup_content = f"Name: {row['name_th']}<br>Developer: {row['developer_name_th']}<br>Price: {row['price_min']}<br>Link: <a href='{row['url_project']}' target='_blank'>{row['url_project']}</a>"
+    folium.Marker(location=(row['latitude'], row['longitude']), popup=popup_content).add_to(map_center)
 
-map_center.add_child(folium.ClickForMarker(popup='Click Point'))
+# Add Click Event to Show Popup Information
+map_center.add_child(folium.ClickForMarker(popup=None))
 
 map_center.save('index.html')
