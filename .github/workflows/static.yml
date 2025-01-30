@@ -37,8 +37,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Specify the file instead of the directory
-          path: 'index.html'
+          # Specify the path to the index.html file relative to the root directory
+          path: './index.html'
 
       - name: Deploy to GitHub Pages
         id: deployment
